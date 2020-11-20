@@ -1,0 +1,198 @@
+% CNIPUSAE definitions - Wolfgang Leister - NR
+%
+% based on Spiderweb Diagram
+% Author: Dominik Renzel
+% Date: 2009-11-11
+\ProvidesPackage{CNIPUSNdiagram}[]
+
+\RequirePackage{tikz}
+\usetikzlibrary{shapes}
+\usepackage{ifthen}
+
+\AtBeginDocument{%
+\newcommand{\CNIPUSND}{8} % number of dimensions (config option)
+\newcommand{\CNIPUSNDhalf}{3} % number of dimensions (config option)
+\newcommand{\CNIPUSNU}{7} % number of scale units (config option)
+\newcommand{\CNIPUSNUMT}{5} % number of scale units minus 2
+\newcommand{\CNIPUSN}{360/\CNIPUSND} % calculated angle between dimension axes  
+\newcommand{\CNIPUSNRR}{90-\CNIPUSN}
+\newdimen\CNIPUSNR % maximal diagram radius (config option)
+\CNIPUSNR=3.5cm 
+\newdimen\CNIPUSNL % radius to put dimension labels (config option)
+\CNIPUSNL=3.9cm
+\newdimen\CNIPUSNLX % extra space for labels
+\CNIPUSNLX=2.5mm
+\newdimen\CNIPUSNLXX % adjustment for boundingbox
+\CNIPUSNLXX=0.5mm
+\newcount\CNIPUSNYYYY
+}
+
+\newcommand{\CNIPUSNfontsize}{\scriptsize}
+\newcommand*{\mytextstyle}{\sffamily\CNIPUSNfontsize\bfseries\color{black!85}}
+\newcommand{\CNIPUSNareafontsize}{\tiny}
+\newcommand*{\myareatextstyle}{\sffamily\CNIPUSNareafontsize\bfseries\color{black!85}}
+\newcommand{\CNIPUSNnumberfontsize}{\scriptsize}
+\newcommand*{\mynumbertextstyle}{\sffamily\CNIPUSNnumberfontsize\bfseries\color{black!85}}
+\newcommand{\CNIPUSNlabeladjustment}{0.0mm}
+\newcommand{\CNIPUSNraise}{-1.0ex}
+
+% Draw the background figure
+\newcommand{\CNIPUSNdraw}{%
+  \foreach \X in {1,...,\CNIPUSNU}{%
+    \draw (0,0) circle (\CNIPUSNR/\CNIPUSNU*\X); 
+  }
+  \foreach \X in {1,...,\CNIPUSND}{%
+    \draw (0,0) -- ({(\X+0.5)*\CNIPUSN}:\CNIPUSNR);
+  }
+  % Cover the inner ring
+  \filldraw[fill=white] 
+      (0,0) circle (\CNIPUSNR/\CNIPUSNU); 
+}
+
+% Draw the background figure
+\newcommand{\CNIPUSNdrawL}{%
+  \foreach \X in {2,...,\CNIPUSNU}{%
+    \draw (0,0) circle (\CNIPUSNR/\CNIPUSNU*\X); 
+  }
+  \foreach \X in {1,...,\CNIPUSND}{%
+    \draw (0,0) -- ({(\X+0.5)*\CNIPUSN}:\CNIPUSNR);
+  }
+  % Cover the inner ring
+%  \filldraw[fill=white] 
+%      (0,0) circle (\CNIPUSNR/\CNIPUSNU); 
+}
+
+\newcommand{\CNIPUSNtext}[3]{%
+  \def\variable{\CNIPUSNDhalf}
+  %\def\sinangle{sin(#2*\CNIPUSN*pi/180)}
+  \ifnum\ifnum#2<4 1\else\ifnum#2>6 1\else0\fi\fi
+   =1
+  \path[
+   decoration = {
+      text along path,
+      text = {|\mytextstyle| #3},
+      text align = {align = center},
+      raise = \CNIPUSNraise
+   },
+   decorate
+  ] 
+  ({(#2+1.5)*\CNIPUSN}: \CNIPUSNL+\CNIPUSNlabeladjustment)
+  arc
+  ({(#2+1.5)*\CNIPUSN}:{(#2+0.5)*\CNIPUSN}: \CNIPUSNL+\CNIPUSNlabeladjustment);
+  \else 
+\path[
+   decoration = {
+      text along path,
+      text = {|\mytextstyle| #3},
+      text align = {align = center},
+      raise = \CNIPUSNraise
+   },
+   decorate
+  ] 
+  ({(#2+0.5)*\CNIPUSN}: \CNIPUSNL+\CNIPUSNlabeladjustment)
+  arc
+  ({(#2+0.5)*\CNIPUSN}:{(#2+1.5)*\CNIPUSN}: \CNIPUSNL+\CNIPUSNlabeladjustment);
+  \fi
+}
+
+\newcommand{\CNIPUSNnumbers}[1]{%
+   % parameter is sector -- for future extension
+  \foreach \X in {0,...,\CNIPUSNUMT}{%
+  \node at (0,{\CNIPUSNR/\CNIPUSNU*(\X+1.4)}) {\mytextstyle \X}; 
+  }
+}
+
+\newcommand{\CNIPUSNNumbers}[1]{%
+   % parameter is sector
+  \foreach \X in {0,...,\CNIPUSNUMT}{%
+  \node at ({(#1-0.5)*\CNIPUSN}:{\CNIPUSNR/\CNIPUSNU*(\X+1.4)}) [circle,inner sep=0pt, minimum size=0.4em,draw=white,fill=white] {\mynumbertextstyle \X}; 
+  }
+}
+
+\newcommand{\CNIPUSNNumbersL}[1]{%
+   % parameter is sector
+  \foreach \X in {1,...,\CNIPUSNUMT}{%
+    \node at ({(#1-0.5)*\CNIPUSN}:{\CNIPUSNR/\CNIPUSNU*(\X+1.4)})
+          [circle,inner sep=0pt, minimum size=0.4em,draw=white,fill=white] {\mynumbertextstyle \X}; 
+  }
+}
+
+\newcommand{\CNIPUSNline}[3]{%
+ \draw[#1] (0,0) ++({(#2+0.5)*\CNIPUSN}:{\CNIPUSNR/\CNIPUSNU*(#3+1.5)}) 
+               arc ({(#2+0.5)*\CNIPUSN}:{(#2+1.5)*\CNIPUSN}:{\CNIPUSNR/\CNIPUSNU*(#3+1.5)});
+}
+
+\newcommand{\CNIPUSNdrawfill}[3]{%
+  \filldraw[#1] (0,0) ++({(#2+0.5)*\CNIPUSN}:{\CNIPUSNR/\CNIPUSNU*(#3+1)}) -- 
+                ({(#2+0.5)*\CNIPUSN}: {\CNIPUSNR/\CNIPUSNU*(#3+2)})
+                    arc ({(#2+0.5)*\CNIPUSN}:{(#2+1.5)*\CNIPUSN}:{\CNIPUSNR/\CNIPUSNU*(#3+2)})
+          -- ({(#2+1.5)*\CNIPUSN}: {\CNIPUSNR/\CNIPUSNU*(#3+1)}) 
+          arc ({(#2+1.5)*\CNIPUSN}:{(#2+0.5)*\CNIPUSN}:{\CNIPUSNR/\CNIPUSNU*(#3+1)});
+}
+
+\newcommand{\CNIPUSNdrawborder}[4]{%
+  \draw[#1] (0,0) ++({(#2+0.5)*\CNIPUSN}:{\CNIPUSNR/\CNIPUSNU*(#3+1)}) -- 
+            ({(#2+0.5)*\CNIPUSN}: {\CNIPUSNR/\CNIPUSNU*(#4+2)})
+            arc ({(#2+0.5)*\CNIPUSN}:{(#2+1.5)*\CNIPUSN}:{\CNIPUSNR/\CNIPUSNU*(#4+2)})
+          -- ({(#2+1.5)*\CNIPUSN}: {\CNIPUSNR/\CNIPUSNU*(#3+1)}) 
+          arc ({(#2+1.5)*\CNIPUSN}:{(#2+0.5)*\CNIPUSN}:{\CNIPUSNR/\CNIPUSNU*(#3+1)});
+}
+
+\newcommand{\CNIPUSNemphborder}[4]{%
+  \draw[#1] (0,0) ++({(#2+0.55)*\CNIPUSN}:{\CNIPUSNR/\CNIPUSNU*(#3+1)}) -- 
+            ({(#2+0.55)*\CNIPUSN}: {\CNIPUSNR/\CNIPUSNU*(#4+2)})
+            arc ({(#2+0.55)*\CNIPUSN}:{(#2+1.45)*\CNIPUSN}:{\CNIPUSNR/\CNIPUSNU*(#4+2)})
+          -- ({(#2+1.45)*\CNIPUSN}: {\CNIPUSNR/\CNIPUSNU*(#3+1)}) 
+          arc ({(#2+1.45)*\CNIPUSN}:{(#2+0.55)*\CNIPUSN}:{\CNIPUSNR/\CNIPUSNU*(#3+1)});
+}
+
+\newcommand{\CNIPUSNfillborder}[4]{%
+  \fill[#1] (0,0) ++({(#2+0.5)*\CNIPUSN}:{\CNIPUSNR/\CNIPUSNU*(#3+1)}) -- 
+            ({(#2+0.5)*\CNIPUSN}: {\CNIPUSNR/\CNIPUSNU*(#4+2)})
+            arc ({(#2+0.5)*\CNIPUSN}:{(#2+1.5)*\CNIPUSN}:{\CNIPUSNR/\CNIPUSNU*(#4+2)})
+          -- ({(#2+1.5)*\CNIPUSN}: {\CNIPUSNR/\CNIPUSNU*(#3+1)}) 
+          arc ({(#2+1.5)*\CNIPUSN}:{(#2+0.5)*\CNIPUSN}:{\CNIPUSNR/\CNIPUSNU*(#3+1)});
+}
+
+\newcommand{\CNIPUSNfillarea}[4]{%
+  \fill[#1] (0,0) ++({(#2+0.5)*\CNIPUSN}:{\CNIPUSNR/\CNIPUSNU*(#3+1.5)}) -- 
+            ({(#2+0.5)*\CNIPUSN}: {\CNIPUSNR/\CNIPUSNU*(#4+1.5)})
+            arc ({(#2+0.5)*\CNIPUSN}:{(#2+1.5)*\CNIPUSN}:{\CNIPUSNR/\CNIPUSNU*(#4+1.5)})
+          -- ({(#2+1.5)*\CNIPUSN}: {\CNIPUSNR/\CNIPUSNU*(#3+1.5)}) 
+          arc ({(#2+1.5)*\CNIPUSN}:{(#2+0.5)*\CNIPUSN}:{\CNIPUSNR/\CNIPUSNU*(#3+1.5)});
+}
+
+\newcommand{\CNIPUSNareatext}[4]{%
+  \ifnum\ifnum#2<4 1\else\ifnum#2>6 1\else0\fi\fi
+   =1
+  \path[
+   decoration = {
+      text along path,
+      text = {|\myareatextstyle| #3},
+      text align = {align = center},
+      raise = +1.0ex
+   },
+   decorate
+  ] 
+  ({(#2+1.5)*\CNIPUSN}: {\CNIPUSNR/\CNIPUSNU*(#4+1)})
+  arc
+  ({(#2+1.5)*\CNIPUSN}:{(#2+0.5)*\CNIPUSN}: {\CNIPUSNR/\CNIPUSNU*(#4+1)});
+  \else 
+\path[
+   decoration = {
+      text along path,
+      text = {|\myareatextstyle| #3},
+      text align = {align = center},
+      raise = -2.0ex
+   },
+   decorate
+  ] 
+  ({(#2+0.5)*\CNIPUSN}: {\CNIPUSNR/\CNIPUSNU*(#4+1)})
+  arc
+  ({(#2+0.5)*\CNIPUSN}:{(#2+1.5)*\CNIPUSN}: {\CNIPUSNR/\CNIPUSNU*(#4+1)});
+  \fi
+}
+
+
+
+\endinput

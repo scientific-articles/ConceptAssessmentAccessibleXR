@@ -1,0 +1,241 @@
+
+\subsubsection{State of the art}
+
+\subsubsection{Knowledge needs and project objectives}
+Participatory design and co-creation are considered to be some of the best methods for understanding a target audience
+and creating high quality, well designed solutions to meet their needs and preferences. Despite this, several reviews
+conclude that the user-involvement in the design and development of e-health services is
+insufficient\footnote{Sosial- og helsedepartementet (2001). Fra bruker til borger. En strategi for nedbygging av
+funksjonshemmende barrierer. Oslo.}, \autocite{manzoorEservicesSocialInclusion2017a}, and needs to be strengthened\footnote{\ Forskningsrådet. Evaluering av
+samhandlingsreformen: sluttrapport fra styringsgruppen for forskningsbasert følgeevaluering av samhandlingsreformen
+(EVASAM). Oslo: Forskningsrådet; 2016.}. Moreover, research that develop and evaluate digital health services designed
+for people with disabilities, seldom include people with disabilities in the study sample \autocite{10.3389/fpsyg.2018.02323,10.1007/978-3-319-58634-2_15}.
+
+Despite the benefits documented in the scientific literature of XR developed for special user groups, such assistive
+technology (AT) has very low uptake and high abandonment rates \autocite{schererWhyPeopleUse2015}.
+Thus, assistive technology targeted at small user groups has a very limited potential for increasing equity and
+reducing exclusion of vulnerable user groups. Some important reasons for the low uptake and high abandonment rates
+could be that a) people with disabilities are often omitted from the research and development process b) the lack of
+collaboration between end-users, researchers, and developers in industry c) the lack of policy platforms to support the
+translation of prototype conceptualization in research to actual implementation in the community and d) lack of
+sustainable business models when the target user groups are small. Also, while studies do report positive effects for
+special user groups, it is difficult to generalise from a limited number of participants to larger groups. 
+
+This project will develop a framework with accompanying tools that can be used to evaluate whether XR installations
+(hardware and software) are accessible, usable, and suitable for users with various needs and abilities, and to put
+forward requirements for such technology. The framework and tools can be used by organisations that acquire or develop
+VR/AR to integrate accessibility as early as possible and thus contribute to equal opportunities for people and larger
+audiences for VR/AR solutions.
+
+In the second step we will, in cooperation with organisations and industry, create a reference architecture and find and
+adapt accessibility plugins, that can be integrated in existing or new XR technology to make them more accessible. 
+
+When people use XR technology, they are presented with a scenario (i.e., a sequence of events in an
+environment)\footnote{Simulation Interoperability Standards Organization. SISO-GUIDE-006-2018 – Guideline on
+Scenario Development for Simulation Environments, 2018; Siegfried R, Laux A, Rother M et al. Scenarios in
+military (distributed) simulation environments. In Proc. 2012 Spring Simulation Interoperability Workshop.
+12S-SIW-014.}. The basic idea is that scenarios should be described digitally in a machine-readable format.
+Furthermore, there should be enough information in this description for the scenario to be presented in different
+modalities that can be adapted to people with different abilities. The digital scenario description is thus universally
+designed, while individual adaptations are made at the presentation level. 
+
+This requires a loose coupling between the scenario as such and how the scenario is implemented in various mixed reality
+platforms (Unity, Unreal, VBS, etc.). The project will develop a reference architecture\footnote{The Open Group: SOA
+Reference Architecture Technical Standard (2011), doc. no. C119} \autocite{hannay-vandenBerg-NATO-2017}
+for universally designed digital scenarios as described
+above. A reference architecture is a design template, which systems developers can use when implementing solutions.
+Adhering to this reference architecture should ensure that solutions embody the stated principles for universal design
+and adaptations to particular user groups. Figure 1 outlines the idea of this reference architecture. The project will
+focus on what information digital scenarios must contain to be universally designed (green artefact in the middle), as
+well as to find out how the information can be used in different mixed-reality platforms to implement adaptations to
+different users (green boxes on the right). The balance between generic and customization-specific information will be
+a central theme.
+
+Figure 1 \WVL{[tbd.]} also shows how a system that uses universally designed digital scenarios is intended to be used. Healthcare
+professionals should be able to design scenarios in an easy-to-understand tool 
+\autocite{10.1007/978-3-030-50732-9_60,Hannay2019StructuredCT}, 
+and a scenario generator will represent the scenario digitally, together with any scoring models to
+measure relevant aspects during plays \autocite{DashleyK.RouwendalvanSchijndel_etal2020}. 
+When the scenario is run on different mixed reality
+platforms with different adaptations, events and changes in the environment is largely determined by a joint event
+manager and a stage \& content manager, respectively (ibid). 
+
+\subsection{Research questions and hypotheses, theoretical approach and methodology}
+Main hypotheses: 
+
+\begin{enumerate}
+\item It is possible to create a framework with accompanying tools that will enable developers to create more
+accessible, inclusive, universally designed mainstream XR solutions. These created solutions will reach beyond the
+target groups of users with disabilities. We will reach additional target groups like for example the elderly or people
+who are situationally disabled by employing more flexible and adaptable techniques. Finally, we will contribute to
+reduce inequality of XR-based health and welfare services. 
+\item When presenting user needs in a systematic form, the goals and purposes of universal design of XR, together with
+concrete ideas and solutions for specific accessibility challenges, and offer empirical evaluation and testing with end
+users together with partners in the health sector and industry will seize the opportunity and implement accessibility
+features into some of their solutions.
+\end{enumerate}
+\subsubsection[\ Research questions: ]{\ Research questions: }
+\begin{itemize}
+\item What type of co-creation methods can be used to enhance the voice of users and stakeholders in the different
+stages of the problem-solving process? 
+
+\begin{itemize}
+\item What type of XR are considered important/interesting for Enthusiast target users. 
+\item What features are important for accessibility and user experience? 
+\item When is XR appropriate for Enthusiast target users? When is it not?
+\item What are the benefits and limitations of XR in health and welfare related training scenarios for our target
+groups?
+\end{itemize}
+\item What are the characterizing factors of universally designed XR solutions and how can the degree of accessibility
+and engagement for various user groups be described and measured? 
+
+\begin{itemize}
+\item What criteria are important for an inclusive user experience of XR?
+\item What other frameworks can be used as a basis for developing our framework (universal design for learning,
+engagement profiles, universal design in other contexts, e.g. museums)?
+\end{itemize}
+\end{itemize}
+\begin{itemize}
+\item \begin{itemize}
+\item How can we measure accessibility and user experience? (e.g. through observations, measurements, etc.? Can sensors,
+Brain Computing Interface (BCI) or other tools be used for automatic evaluation of the user experience – as a
+supplement to empirical evaluation methods? \ 
+\item How can our framework and accessibility be used by software/hardware producers and their customers to create more
+inclusive XR systems? What are concrete recommendations for hardware manufacturers and software developers.
+\end{itemize}
+\end{itemize}
+\begin{itemize}
+\item How can we define a reference architecture that allows XR manufacturers to integrate accessibility plugins into
+their mainstream XR? 
+
+\begin{itemize}
+\item Which aspects should be covered by the universally designed digital scenario, and which aspects should be covered
+by the specific adaptations to different user groups (Figure 1)? For example, should engagement principles be stated as
+part of the universally designed scenario or as part of the adaptations. 
+\item How well does the reference architecture accommodate state-of-practice and possibly proprietary stove-piped
+solutions; hereunder,
+
+\begin{itemize}
+\item What types of accessibility objects/plugins exists and how are they integrated with \ \ mainstream XR? 
+\item How feasible is it that industry will adhere to the reference architecture ideal? 
+\end{itemize}
+\item What is the user experience of users with disabilities of the adapted solution? 
+\end{itemize}
+\end{itemize}
+\begin{itemize}
+\item How can municipal, industry and other stakeholder be educated and engaged in the promotion of universal design of
+XR? 
+\end{itemize}
+\subsubsection{Theoretical approach and methodology}
+Co-creation describes an interaction where actors jointly produce a mutually valued outcome based on their assessments
+of the risks and benefits of the proposed courses of action, and decisions based on dialogue, access to information and
+resources, as well as transparency\footnote{\ Prahalad, C. K., \& Ramaswamy, V. (2004). Co-creation experiences: The
+next practice in value creation. Journal of Interactive Marketing, 18(3), 5-14. doi:https://doi.org/10.1002/dir.20015
+}. Co-creation has the potential to reduce siloed-working. It may refer to any act of collective creativity, i.e.
+creativity that is shared by two or more people\footnote{Sanders, E.B.N. \& P.J. Stappers. (2008) Co-creation and the
+new landscapes of design. CoDesign. 4(1):5-18.}. Co-creational approaches including actively involving intended users
+has increasingly been applied to redesigning health services,\footnote{Chamberlain, P. \& R. Partridge
+(2017). Co-designing co-design. Shifting the culture of practice in healthcare. The Design
+Journal. 20 (sup. 1):2010-2021}. In this project we define co-creation pragmatically as creative, open and participatory
+and inclusive processes aiming at a) identifying user needs, b) exploring, building and sharing knowledge, ideas and
+concerns across organisational roles and cultures, and c) making the iterative minor and major adjustments necessary
+for reaching the strategic research goals and to develop accompanying and practical tools\footnote{Dugstad, J., et
+al. (2018), Towards successful implementation of digital night monitoring technology through co-creation. A four-year
+longitudinal case-study}.
+
+
+\subsubsection{Interdisciplinary consideration and cooperation}
+The proposal brings together organisations and individuals in a unique interdisciplinary and cross-sectional
+collaboration in rehabilitation research in Norway and beyond. Building on the network of the project partners and the
+reference group we will reach out to national and international stakeholders. This will further strengthen the network
+between service users in municipality and research in the implementation and use of XR technology in the health and
+welfare sector to ensure equity and equality to health and welfare services.
+
+\subsubsection[\ Ethical considerations]{\ Ethical considerations}
+Close collaboration with stakeholders will ensure RRI (Responsible research \& innovation). As the project involves
+vulnerable groups, ethical aspects will be considered during all stages of the project. Further, ethical considerations
+will be systematically integrated into the co-creation and evaluation processes. All participation by stakeholders and
+users will be regulated by informed consent. To address ethical aspects related to the use of XR as health technology,
+we will use the Morally Relevant Questions with Respect to Assessing Health Technology introduced by 
+\citet{hofmann_droste_oortwijn_cleemput_sacchini_2014}
+%Hofmann et al.
+%(2014)\footnote{\ Hofmann, B., Droste, S., Oortwijn, W., Cleemput, I., \& Sacchini, D. (2014). Harmonization of ethics in health technology assessment: a revision of the Socratic approach. International journal of technology assessment in health care, 30(1), 3.} 
+including 33 questions within seven domains. 
+What are\dots: 
+\begin{enumerate*}[label={\arabic*.\ },ref=\arabic*]
+\item \dots the morally relevant issues related
+to the diagnosis and the patient group? 
+\item \dots the ethical, social, cultural, legal, and religious challenges related to
+the health technology? 
+\item \dots the moral challenges with structural changes related to the health technology? 
+\item \dots the moral
+issues related to the characteristics of the health technology? 
+\item \dots the moral issues related to stakeholders? 
+\item \dots the
+moral issues related to the assessment of the health technology? 
+\item Are there additional moral issues?
+\end{enumerate*}
+
+\subsection[Novelty and ambition ]{Novelty and ambition }
+That the universally designed scenarios do not have to be implemented time and time again for each new adaptation, and
+that adaptations are made only in the mixed-reality platforms, is a loose coupling in line with the concept Modelling
+\& Simulation as Service (MSaaS\footnote{\ van den Berg, T.W., Huiskamp, W., Siegfried, R., Lloyd, J., Grom, A.,
+Phillips, R.: Modelling and Simulation as a Service: Rapid deployment of interoperable and credible simulation
+environments – an overview of NATO MSG-136. In: Proc. 2018 Winter Simulation Innovation Workshop. No. 18W-SIW-018
+(2018)}[FFFC?] . This concept is essential for enabling universally designed solutions for different user groups
+quickly. The flexibility in this is also necessary for rapid testing and evaluation of solutions.
+
+The anticipated results are both theoretical and practical:
+\begin{enumerate}
+\item 
+A survey and overview of challenges and opportunities of VR for people with disabilities. 
+This milestone has as overall goal to raise awareness and deepen the understanding of accessibility in VR.
+
+\item An assessment tool to evaluate the accessibility of VR systems, hardware, software, etc. with respect to the
+dimensions of cognition, mobility, hearing, vision, motor, and/or voice. In this milestone, we will provide a
+checklist or some other half-automated tool that can be used by manufacturers, developers and customers of VR systems
+to evaluate the accessibility of any given VR system.
+
+\item A survey of existing tools and solutions to address some of the challenges discovered in the previous milestones. We
+will list and review plugins, hardware, development frameworks, and provide some suggestions on how to compensate for
+some of the challenges that people with impairment(s) might face.
+
+\item A specification on how to make VR systems more accessible for people with disabilities.
+The outcome of this milestone will be a list of recommendations and concrete specifications that manufacturers and
+developers can use to create well-rounded and universally designed VR system.
+
+\item An empirical evaluation with actual user groups connected to our partners (most likely the deaf and/or people with
+autism).
+We will verify the ENTHUSIAST framework empirically with one/two concrete user groups: from the assessment of existing
+games and setups, suggestions on how to improve them, implementations of our specifications (in form of plugins,
+add-ons, extra-hardware, etc), to the evaluation of accessibility and perceived engagement before and after
+accessibility improvement.
+\end{enumerate}
+
+\section[Impact ]{Impact }
+\subsection[Potential impact of the proposed research ]{Potential impact of the proposed research }
+There are several outputs from the project. First there is the UD-XR evaluation and development framework. This will
+describe accessibility needs and requirements for a broad range of user groups, and with detail and emphasis on the
+needs of the user groups in our partner organisations. Secondly, there will a solution architecture with a set of
+accessibility features that can be implemented. 
+
+With the advancing commercial feasibility, ongoing popularity and omnipresent digitalisation of public and official
+life, it is very probable that there are going to be more legal requirements to digital accessibility which includes
+VR/AR/MR21, similar to for example the 2019 European Accessibility
+Act\footnote{https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=uriserv:OJ.L\_.2019.151.01.0070.01.ENG\&toc=OJ:L:2019:151:TOC
+\ } and the Norwegian Equality and Anti-Discrimination Act\footnote{https://lovdata.no/dokument/NLE/lov/2017-06-16-51}.
+The UN Convention on the Rights of Persons with Disabilities aims to ensure that disabled people can enjoy the full
+range of human rights: civil, political, economic, social, and cultural. This shall, among other things, be ensured
+through requirements for accessible ICT (Article 2). The Convention refers to the concept of universal design (UD) as a
+means through which to achieve this goal (Article 4). 
+
+As in the web accessibility domain there will be need for assistive technology (AT), specially designed for certain user
+groups. However, integrating accessibility as a fundamental core part of a mainstream XR-system will be valuable not
+only for people with disabilities, but also to create a more flexible, adaptive and inclusive technology ecosystem that
+will benefit a wide range of users, such as people of different ages, languages, and everyone experiences situational
+disabilities dependent on their context21. Universally designed mainstream technology has many advantages over
+specialized technology, such as lower cost, increased availability, and creating equal opportunities and social
+acceptability. 
+
+
+

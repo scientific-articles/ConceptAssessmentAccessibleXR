@@ -1,0 +1,206 @@
+\begin{figure}
+\centering
+
+\ifx\USETIKZINFIGURE\undefined
+\includegraphics{figures/jVRARVestfold-ChartEPN}
+\else
+\begin{tikzpicture}[scale=1.75]
+\path (\CNIPUSNL+\CNIPUSNLXX,\CNIPUSNL+\CNIPUSNLXX) --
+(-\CNIPUSNL-\CNIPUSNLXX,\CNIPUSNL+\CNIPUSNLXX) --
+(-\CNIPUSNL-\CNIPUSNLXX,-\CNIPUSNL-\CNIPUSNLXX) --
+(\CNIPUSNL+\CNIPUSNLXX,-\CNIPUSNL-\CNIPUSNLXX);
+% Draw background
+\filldraw [fill=white!80!black] (0,0) circle (\CNIPUSNR/\CNIPUSNU*2);
+\CNIPUSNdrawL
+\filldraw [white!80!black,fill=white!80!black] (0,0) circle (\CNIPUSNR/\CNIPUSNU*0.7);
+\renewcommand*{\mytextstyle}{\sffamily\large\bfseries\color{black!85}}
+\renewcommand*{\myareatextstyle}{\fontfamily{phv}\fontseries{mc}\selectfont\footnotesize\color{black!85}}
+\renewcommand*{\mynumbertextstyle}{\fontfamily{phv}\fontseries{mc}\selectfont\large\bfseries\color{blue!85}}
+\renewcommand{\CNIPUSNlabeladjustment}{-2.0mm}
+\renewcommand{\CNIPUSNraise}{-0.8ex}
+%\fontfamily{phv}\fontseries{mc}\selectfont
+\CNIPUSNtext{xxx}{1}{Konkurranse}
+\CNIPUSNtext{xxx}{2}{Fortelling}
+\CNIPUSNtext{xxx}{3}{Interaktivitet}
+\CNIPUSNtext{xxx}{4}{Fysisk}
+\CNIPUSNtext{xxx}{5}{Brukerstyring}
+\CNIPUSNtext{xxx}{6}{Sosialisering}
+\CNIPUSNtext{xxx}{7}{M{\aa}loppn{\aa}else}
+\CNIPUSNtext{xxx}{8}{Utforsking}
+
+% Competition
+%\CNIPUSNareatext{xxx}{1}{{---}}{0}
+\CNIPUSNareatext{xxx}{1}{nei}{0.2}
+%1
+\CNIPUSNareatext{xxx}{1}{oppn{\aa}}{1.4}
+\CNIPUSNareatext{xxx}{1}{resultat}{1.0}
+%2
+\CNIPUSNareatext{xxx}{1}{med}{2.4}
+\CNIPUSNareatext{xxx}{1}{installasjon}{2.0}
+%3
+\CNIPUSNareatext{xxx}{1}{med brukere}{3.4}
+\CNIPUSNareatext{xxx}{1}{asynkront}{3.0}
+%4
+\CNIPUSNareatext{xxx}{1}{med brukere}{4.4}
+\CNIPUSNareatext{xxx}{1}{i sanntid}{4.0}
+%5
+\CNIPUSNareatext{xxx}{1}{utfordring i gruppe}{5.4}
+\CNIPUSNareatext{xxx}{1}{p{\aa}virke andre brukere}{5.0}
+
+% Narrative
+\CNIPUSNareatext{xxx}{2}{kun}{0.4}
+\CNIPUSNareatext{xxx}{2}{se}{-0.0}
+%1
+\CNIPUSNareatext{xxx}{2}{lese forkl.}{1.4}
+\CNIPUSNareatext{xxx}{2}{tekst}{1.0}
+%2
+\CNIPUSNareatext{xxx}{2}{begr.\ struktur}{2.4}
+\CNIPUSNareatext{xxx}{2}{i fortellingen}{2.0}
+%3
+\CNIPUSNareatext{xxx}{2}{rik struktur}{3.4}
+\CNIPUSNareatext{xxx}{2}{i fortellingen}{3.0}
+%4
+\CNIPUSNareatext{xxx}{2}{dramatisert historie}{4.4}
+\CNIPUSNareatext{xxx}{2}{scenografisk omgivelse}{4.0}
+%5
+\CNIPUSNareatext{xxx}{2}{omsluttende omgivelse}{5.0}
+\CNIPUSNareatext{xxx}{2}{dramatisert fortelling}{5.4}
+
+% Interaction
+\CNIPUSNareatext{xxx}{3}{kun}{0.4}
+\CNIPUSNareatext{xxx}{3}{se}{-0.0}
+%1
+\CNIPUSNareatext{xxx}{3}{ta i}{1.4}
+\CNIPUSNareatext{xxx}{3}{objekt}{1.0}
+%2
+\CNIPUSNareatext{xxx}{3}{begrenset (j/n}{2.4}
+\CNIPUSNareatext{xxx}{3}{start/stopp)}{2.0}
+%3
+\CNIPUSNareatext{xxx}{3}{valg p{\aa}virker}{3.4}
+\CNIPUSNareatext{xxx}{3}{utfallet}{3.0}
+%4
+\CNIPUSNareatext{xxx}{3}{h{\o}y grad; valg}{4.4}
+\CNIPUSNareatext{xxx}{3}{har konsekvenser}{4.0}
+%5
+\CNIPUSNareatext{xxx}{3}{eller egen fortelling}{5.0}
+\CNIPUSNareatext{xxx}{3}{brukere skaper innhold}{5.4}
+
+% Physical
+\CNIPUSNareatext{xxx}{4}{kun}{0.0}
+\CNIPUSNareatext{xxx}{4}{se}{0.4}
+%1
+\CNIPUSNareatext{xxx}{4}{ber{\o}re}{1.0}
+\CNIPUSNareatext{xxx}{4}{holde}{1.4}
+%2
+\CNIPUSNareatext{xxx}{4}{bevege}{2.0}
+\CNIPUSNareatext{xxx}{4}{omvisning)}{2.4}
+%3
+\CNIPUSNareatext{xxx}{4}{noe aktivitet}{3.0}
+\CNIPUSNareatext{xxx}{4}{bruke objekt}{3.4}
+%4
+\CNIPUSNareatext{xxx}{4}{full kroppsbevegelse}{4.0}
+\CNIPUSNareatext{xxx}{4}{lengre fysisk aktivitet}{4.4}
+%5
+\CNIPUSNareatext{xxx}{4}{full kroppsbevegelse}{5.0}
+\CNIPUSNareatext{xxx}{4}{i realistisk setting}{5.4}
+
+% User Control
+\CNIPUSNareatext{xxx}{5}{kun}{0.0}
+\CNIPUSNareatext{xxx}{5}{se}{0.4}
+%1
+\CNIPUSNareatext{xxx}{5}{line{\ae}rt}{1.0}
+\CNIPUSNareatext{xxx}{5}{kronol.}{1.4}
+%2
+\CNIPUSNareatext{xxx}{5}{sekvenser}{2.0}
+\CNIPUSNareatext{xxx}{5}{og betingelser}{2.4}
+%3
+\CNIPUSNareatext{xxx}{5}{valg uten effekt}{3.0}
+\CNIPUSNareatext{xxx}{5}{p{\aa} flyten}{3.4}
+%4
+\CNIPUSNareatext{xxx}{5}{brukere kontrollerer}{4.0}
+\CNIPUSNareatext{xxx}{5}{flyten; parallelle fortellinger}{4.4}
+%5
+\CNIPUSNareatext{xxx}{5}{h{\o}y grad av styring;}{5.0}
+\CNIPUSNareatext{xxx}{5}{kreativ prosess}{5.4}
+
+
+% Social
+\CNIPUSNareatext{xxx}{6}{1}{0.0}
+\CNIPUSNareatext{xxx}{6}{pers.}{0.4}
+%1
+\CNIPUSNareatext{xxx}{6}{1 person}{1.0}
+\CNIPUSNareatext{xxx}{6}{andre ser p{\aa}}{1.4}
+%2
+\CNIPUSNareatext{xxx}{6}{flere pers.}{2.0}
+\CNIPUSNareatext{xxx}{6}{hver sin install.}{2.4}
+%3
+\CNIPUSNareatext{xxx}{6}{1 person, andre}{3.0}
+\CNIPUSNareatext{xxx}{6}{ser p{\aa} og heier}{3.4}
+%4
+\CNIPUSNareatext{xxx}{6}{beregnet for flere}{4.0}
+\CNIPUSNareatext{xxx}{6}{personer samtidig}{4.4}
+%5
+\CNIPUSNareatext{xxx}{6}{multi-person installasjon}{5.0}
+\CNIPUSNareatext{xxx}{6}{personer m{\aa} samarbeide}{5.4}
+
+% Achievements
+%\CNIPUSNareatext{xxx}{7}{{---}}{0}
+\CNIPUSNareatext{xxx}{7}{nei}{0.2}
+%\CNIPUSNareatext{xxx}{7}{look}{0.4}
+%\CNIPUSNareatext{xxx}{7}{only}{-0.1}
+%1
+\CNIPUSNareatext{xxx}{7}{umiddelb.}{1.4}
+\CNIPUSNareatext{xxx}{7}{tilb.mld.}{1.0}
+%2
+\CNIPUSNareatext{xxx}{7}{m{\aa}loppn{\aa}else}{2.4}
+\CNIPUSNareatext{xxx}{7}{vist p{\aa} slutten}{2.0}
+%3
+\CNIPUSNareatext{xxx}{7}{reslt. indikator}{3.4}
+\CNIPUSNareatext{xxx}{7}{grafisk fremst.}{3.0}
+%4
+\CNIPUSNareatext{xxx}{7}{vise m{\aa}loppn{\aa}else, poeng}{4.4}
+\CNIPUSNareatext{xxx}{7}{synlig anerkjennelse}{4.0}
+%5
+\CNIPUSNareatext{xxx}{7}{m{\aa}loppn{\aa}else gir ekstra}{5.4}
+\CNIPUSNareatext{xxx}{7}{valg og har konsekvenser}{5.0}
+
+% Explore
+%\CNIPUSNareatext{xxx}{8}{{---}}{0}
+%\CNIPUSNareatext{xxx}{8}{persp.}{0.4}
+%\CNIPUSNareatext{xxx}{8}{fast}{0.0}
+\CNIPUSNareatext{xxx}{8}{nei}{0.2}
+%1
+\CNIPUSNareatext{xxx}{8}{flere syns-}{1.4}
+\CNIPUSNareatext{xxx}{8}{vinkler}{1.0}
+%2
+\CNIPUSNareatext{xxx}{8}{utforske}{2.4}
+\CNIPUSNareatext{xxx}{8}{i ro}{2.0}
+%3
+\CNIPUSNareatext{xxx}{8}{utforske}{3.4}
+\CNIPUSNareatext{xxx}{8}{i bevegelse}{3.0}
+%4
+\CNIPUSNareatext{xxx}{8}{kan unders{\o}ke}{4.4}
+\CNIPUSNareatext{xxx}{8}{og ta fra hverandre}{4.0}
+%5
+\CNIPUSNareatext{xxx}{8}{kan f{\o}lge mange spor}{5.4}
+\CNIPUSNareatext{xxx}{8}{i et mulighetsrom}{5.0}
+
+
+\CNIPUSNNumbersL{3}
+\CNIPUSNNumbersL{7}
+\CNIPUSNNumbersL{1}
+\CNIPUSNNumbersL{5}
+%\filldraw [fill=white!80!black] (0,0) circle (\CNIPUSNR/\CNIPUSNU*1);
+%\draw (0,0) node {0--5};
+\node at (0,0)
+%      [circle,inner sep=0pt, minimum size=0.4em,draw=white,fill=white]
+      {\mynumbertextstyle\huge 0};
+\end{tikzpicture}
+\fi
+%\end{center}
+\caption{\EP{en} forklart med korte definisjoner; oversatt til norsk
+  %fra engelsk original \citep{jLifSci16v8n12} 
+  og tilpasset kunst i offentlige rom. 
+  For å bestemme en verdi, søk etter nummer for beskrivelsen som
+  passer best.}\label{fig:engagementprofile:n}
+\end{figure}
